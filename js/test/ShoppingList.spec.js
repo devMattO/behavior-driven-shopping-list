@@ -68,9 +68,9 @@ describe('Shopping List Item', function(){
     it('should construct and return an html formatted string', function(){
       expect(item.render()).to.equal(
 `<li class="completed_${item.is_done}">
-  <span>${name}</span>
-  <span>${item.description}</span>
-</li>`);
+    <span>${item.name}</span>
+    <span>${item.description}</span>
+  </li>`);
     });
 
   });
@@ -153,11 +153,24 @@ describe('Shopping List', function(){
     });
 
     it('should have a method named render', function(){
-      expect(item.render).to.exist;
+      expect(daList.render).to.exist;
+    });
 
-      // expect(item.render()).should.equal(
 
-      //   );
+    it('should return an HTML formatted string', function(){
+//       var salad = new ShoppingListItem('Salad', 'Not a real meal');
+//       ShoppingList3.addItem(salad);
+//       expect(ShoppingList3.render(salad.render())).to.equal(
+// `<ul><li class="completed_false"><span>Salad</span><span>Not a real meal</span></li></ul>`);
+      var burger = new ShoppingListItem('Burger', 'Best food in the entire world');
+      ShoppingList3.addItem(burger);
+      expect(ShoppingList3.render(burger.render())).to.equal(
+`'<ul>
+  <li class=\"completed_false\">
+    <span>Burger</span>
+    <span>Best food in the entire world</span>
+  </li>
+</ul>'`);
     });
 
   });

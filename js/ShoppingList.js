@@ -22,4 +22,18 @@ function ShoppingList( items ) {
     }
   };
 
+  this.render = function(){
+    var concatItems = '';
+
+    for (var i = 0; i < this.items.length; i++) {
+      concatItems += this.items[i].render();
+    }
+    var returnItem = (
+`'<ul>
+  ${concatItems}
+</ul>'`);
+
+    return returnItem;
+  };
+
 }

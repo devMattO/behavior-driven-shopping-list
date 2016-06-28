@@ -13,11 +13,12 @@ function ShoppingListItem( name, description ) {
     return false;
   };
   this.render = function() {
-    var item = new ShoppingListItem('apple', 'red and delicious');
-    var htmlString =`<li class="completed_${item.is_done}">
-  <span>${name}</span>
-  <span>${item.description}</span>
-</li>`;
+    // var item = new ShoppingListItem('apple', 'red and delicious');
+    var htmlString =
+  `<li class="completed_${this.is_done}">
+    <span>${this.name}</span>
+    <span>${this.description}</span>
+  </li>`;
   return htmlString;
   };
 }
