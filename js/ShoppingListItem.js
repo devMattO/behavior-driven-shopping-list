@@ -13,23 +13,13 @@ function ShoppingListItem( name, description ) {
     return false;
   };
   this.render = function() {
-    var htmlString =`<li class="completed_false">
-  <span>Avocado</span>
-  <span>Must be eaten immediately.</span>
+    var item = new ShoppingListItem('apple', 'red and delicious');
+    var htmlString =`<li class="completed_${item.is_done}">
+  <span>${name}</span>
+  <span>${item.description}</span>
 </li>`;
-
   return htmlString;
-
   };
 }
 
-function ShoppingList( items ) {
-  this.items = null;
-
-}
-
-ShoppingList.prototype.itemsConstructor = function(){
-  this.items = {};
-  return this.items;
-};
 
